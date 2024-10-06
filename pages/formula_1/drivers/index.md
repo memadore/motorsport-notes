@@ -10,7 +10,7 @@ title: Drivers
 ```sql driver_points
   select driver_code,
     total_points
-  from f1.rpt_driver__stats_career
+  from f1.rpt_driver_stats_career
   where total_points > 0
   order by total_points desc
   limit '${inputs.driver_count}'
