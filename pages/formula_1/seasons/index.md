@@ -5,7 +5,7 @@ title: Seasons
 ```sql seasons
 select *,
     '/formula_1/seasons/' || season::integer as season_url,
-from f1.rpt_seasons__stats
+from f1.rpt_seasons_stats
 order by season desc
 ```
 
