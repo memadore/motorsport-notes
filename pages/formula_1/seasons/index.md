@@ -9,7 +9,7 @@ from f1.rpt_seasons_stats
 order by season desc
 ```
 
-Summary of all the Formula 1 seasons. 
+Summary of all the Formula 1 seasons.
 
 <DataTable data={seasons} search=true link=season_url rows=15>
 	<Column id=season_url contentType=link linkLabel=season fmt=id title="Season" align=left />

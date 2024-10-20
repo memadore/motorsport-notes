@@ -31,7 +31,7 @@ with race_rank as (
     from f1.rpt_circuits_stats
     where circuit_name like '${params.circuit}'
 )
-select 
+select
     concat(
         circuit_name,
         ' (',
@@ -44,7 +44,7 @@ offset (select * from race_rank)
 limit 5
 ```
 
-<BigValue 
+<BigValue
   data={circuit_stats}
   title="First Race"
   value=first_race_date
@@ -55,7 +55,7 @@ limit 5
   comparisonDelta=false
 />
 
-<BigValue 
+<BigValue
   data={circuit_stats}
   title="Last Race"
   value=last_race_date
@@ -66,7 +66,7 @@ limit 5
   comparisonDelta=false
 />
 
-<BigValue 
+<BigValue
   data={circuit_stats}
   title="Grand Prix Hosted"
   value=race_count
@@ -102,7 +102,7 @@ where circuit_name like '${params.circuit}'
 group by circuit_name
 ```
 
-<BigValue 
+<BigValue
   data={circuit_winners}
   title="First Winner"
   value=first_driver_winner
@@ -112,7 +112,7 @@ group by circuit_name
   comparisonDelta=false
 />
 
-<BigValue 
+<BigValue
   data={circuit_winners}
   title="Latest Winner"
   value=last_driver_winner
@@ -122,7 +122,7 @@ group by circuit_name
   comparisonDelta=false
 />
 
-<BigValue 
+<BigValue
   data={circuit_winners}
   title="Different Winners"
   value=different_winners
@@ -180,19 +180,19 @@ order by fastest_lap_time_seconds
 limit 1
 ```
 
-<BigValue 
+<BigValue
   data={circuit_fastest_lap}
   title="Fastest Lap"
   value=time_label
 />
 
-<BigValue 
+<BigValue
   data={circuit_fastest_lap}
   title="Driver"
   value=full_name
 />
 
-<BigValue 
+<BigValue
   data={circuit_fastest_lap}
   title="Date"
   value=session_start_utc
@@ -200,7 +200,7 @@ limit 1
 />
 
 <Grid cols=2>
-    <LineChart 
+    <LineChart
         data={circuit_fastest_laps}
         title="Fastest Race Lap time"
         subtitle="Current record is {circuit_fastest_lap[0].time_label} by {circuit_fastest_lap[0].full_name}"
@@ -211,7 +211,7 @@ limit 1
         markers=true
         markerShape=emptyCircle
     />
-    
+
     <DataTable data={circuit_fastest_laps}>
         <Column id=driver_url title="Driver" contentType=link linkLabel=driver_label align="right" />
         <Column id=session_start_utc title="Date" />
@@ -221,7 +221,7 @@ limit 1
 
 
 ---
- 
+
 ## Drivers
 
 ```sql drivers
@@ -240,7 +240,7 @@ where circuit_name like '${params.circuit}'
 />
 
 ```sql circuit_driver_race_count
-select 
+select
     full_name,
     race_count
 from f1.rpt_circuits_drivers
@@ -251,7 +251,7 @@ limit 10
 ```
 
 ```sql circuit_driver_win_count
-select 
+select
     full_name,
     win_count
 from f1.rpt_circuits_drivers
@@ -262,7 +262,7 @@ limit 10
 ```
 
 ```sql circuit_driver_podium_count
-select 
+select
     full_name,
     podium_count
 from f1.rpt_circuits_drivers
@@ -273,7 +273,7 @@ limit 10
 ```
 
 ```sql circuit_driver_points
-select 
+select
     full_name,
     points_total
 from f1.rpt_circuits_drivers

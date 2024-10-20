@@ -1,4 +1,5 @@
-select circuit.circuit_name,
+select
+    circuit.circuit_name,
     _session.session_start_utc::date as session_start_utc,
     driver.full_name,
     '/formula_1/drivers/' || full_name as driver_url,

@@ -1,2 +1,1 @@
-select *
-from reports.rpt_driver__stats_career
+select * from reports.rpt_driver__stats_career

@@ -12,7 +12,7 @@ order by race_count desc
 ```
 
 <PointMap
-    data={circuits} 
+    data={circuits}
     title="Circuit locations"
     lat=latitude
     long=longitude

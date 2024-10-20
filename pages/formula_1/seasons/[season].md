@@ -50,11 +50,11 @@ where season = ${params.season}
 order by season, race_round, points_season
 ```
 
-<LineChart 
+<LineChart
     data={driver_standings_timeline}
     x=race_round
     xMin=1
-    y=points_season 
+    y=points_season
     series=full_name
 />
 
