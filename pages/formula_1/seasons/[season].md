@@ -78,5 +78,3 @@ order by season, race_round, championship_position desc
     swapXY=true
     labels=true
 />
-
-## Constructors

@@ -18,7 +18,15 @@ select
     circuit.latitude,
     circuit.longitude,
     lifetime_stat.race_count,
+    rank() over (order by race_count desc) as race_count_rank,
+    case
+        when race_count_rank = 1 then 'st'
+        when race_count_rank = 2 then 'nd'
+        when race_count_rank = 3 then 'rd'
+        else 'th'
+    end as race_count_rank_suffix,
     lifetime_stat.first_race_date,
     lifetime_stat.last_race_date
 from mart.mart_dim_circuits as circuit
-left join lifetime_stats as lifetime_stat using (circuit_id);
+left join lifetime_stats as lifetime_stat using (circuit_id)
+order by race_count_rank;
