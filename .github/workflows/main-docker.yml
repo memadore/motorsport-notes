@@ -31,7 +31,7 @@ jobs:
         run: |
           duck-f1 -o sources/f1/data run --event-sha a3cf4bf0
       - name: Log in to the Container registry
-        uses: docker/login-action@v3
+        uses: docker/login-action@v4
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
